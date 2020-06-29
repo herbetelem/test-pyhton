@@ -1,35 +1,12 @@
-X = int(input())
-hash_lignes = int(input())
-hash_items = int(input())
-rec = int(input())
-​
+def count_smileys(arr):
+    count = 0
+    for index in arr:
+        if len(index) == 2:
+            if (index[0] == ":" or index[0] == ";") and (index[1] == ")" or index[1] == "D"):
+                count += 1
+        elif len(index) == 3:
+            if (index[0] == ":" or index[0] == ";") and (index[1] == "-" or index[1] == "~") and (index[2] == ")" or index[2] == "D"):
+                count += 1
+    return count
 
-def Forme1(value1):
-    for i in range(value1):
-        print("X", end = '')
-    print()
-​
-def Forme2(value1, value2):   # value1 = lignes   value2 = nb_items
-    for i in range(value2 - 1):
-        print("#", end= '')
-    for i in range(value1 - 1):
-        a = " " * (value2 - 2)
-        print("#" + a + "#")
-    for i in range(value2):
-        print("#", end= '')
-    print()
-​
-def Forme3(value1):
-    print("@", end="\n")
-    i = 0
-    while i < r-2:
-        print("@" + (" "*(i) + "@"),end = "\n")
-        if i == r-3:
-            print("@"*(i+3), end="\n")
-        i +=1
-​
-Forme1(X)
-print()
-Forme2(hash_lignes, hash_items)
-print()
-Forme3(rec)
+print(count_smileys([':D',':~)',';~D',':)']))
