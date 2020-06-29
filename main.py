@@ -1,35 +1,35 @@
-def convertM(valeur):
-    valeur = float(valeur)
-    result = 3.2808399187 * valeur
-    result = round(result, 6)
-    print(str(result) + " p")
-    
-def convertG(valeur):
-    valeur = float(valeur)
-    result = 0.002205 * valeur
-    result = round(result, 6)
-    print(str(result) + " l")
+X = int(input())
+hash_lignes = int(input())
+hash_items = int(input())
+rec = int(input())
+​
 
-def convertC(valeur):
-    valeur = float(valeur)
-    result = 32 + 1.8 * valeur
-    result = round(result, 6)
-    print(str(result) + " f")
-    40.354331
-
-
-nbConvert = int(input())
-index = 0
-while index < nbConvert:
-    convertX = str(input())
-    convertX = convertX.split()
-    valeur = convertX[0]
-    mesure = convertX[1]
-    if convertX[1] == "m":
-        convertM(valeur)
-    elif convertX[1] == "c":
-        convertC(valeur)
-    elif convertX[1] == "g":
-        convertG(valeur)
-    index += 1
-
+def Forme1(value1):
+    for i in range(value1):
+        print("X", end = '')
+    print()
+​
+def Forme2(value1, value2):   # value1 = lignes   value2 = nb_items
+    for i in range(value2 - 1):
+        print("#", end= '')
+    for i in range(value1 - 1):
+        a = " " * (value2 - 2)
+        print("#" + a + "#")
+    for i in range(value2):
+        print("#", end= '')
+    print()
+​
+def Forme3(value1):
+    print("@", end="\n")
+    i = 0
+    while i < r-2:
+        print("@" + (" "*(i) + "@"),end = "\n")
+        if i == r-3:
+            print("@"*(i+3), end="\n")
+        i +=1
+​
+Forme1(X)
+print()
+Forme2(hash_lignes, hash_items)
+print()
+Forme3(rec)
