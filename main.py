@@ -1,11 +1,9 @@
-def accum(s):
-    liste=[]
-    compteur=0
-    for i in (s):
-        liste.append(i.upper()+i.lower()*compteur)
-        compteur+=1
-    x="-".join(liste)
-    return(x)
+def changeTuple(key, value, my_tuple):
+    lst = list(my_tuple)
+    lst[key] = value
+    my_tuple = tuple(lst)
+    return my_tuple
 
-
-print(accum("abcs"))
+my_tuple = ("data analyst", "data scientist", "data engineer", "data architect")
+my_tuple = changeTuple(0, "test", my_tuple)
+print(my_tuple)
